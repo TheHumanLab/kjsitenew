@@ -1572,11 +1572,11 @@ The discipline investigates what is producing it.
     <button class="modal-close" onclick="closeModal()">×</button>
     <h3>Start a Conversation</h3>
     <p class="modal-sub">A brief initial conversation — typically 30 minutes — will identify whether a diagnostic engagement is appropriate for your situation and which service is the right starting point.</p>
-    <form onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" placeholder="First name" required />
+    <form action="https://formspree.io/f/mkoajapw" method="POST" onsubmit="handleSubmit(event)">
+  <input type="hidden" name="_replyto" value="hello@kaylee-jane.com">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
         </div>
         <div class="form-group">
           <label for="lastName">Last Name</label>
