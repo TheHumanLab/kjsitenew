@@ -1452,13 +1452,38 @@ This is not a general consulting methodology. It is a diagnostic discipline buil
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
   });
-  function handleSubmit(e) {
+ function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Enquiry Received — We\'ll be in touch within two business days.';
-    btn.style.background = '#2c5f2e';
-    btn.style.color = '#fff';
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const data = new FormData(form);
+
+    btn.textContent = 'Sending...';
     btn.disabled = true;
+
+    fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            btn.textContent = 'Enquiry Received — We\'ll be in touch within two business days.';
+            btn.style.background = '#2c5f2e';
+            btn.style.color = '#fff';
+        } else {
+            btn.textContent = 'Something went wrong — please email hello@kaylee-jane.com';
+            btn.style.background = '#8b0000';
+            btn.style.color = '#fff';
+            btn.disabled = false;
+        }
+    })
+    .catch(() => {
+        btn.textContent = 'Something went wrong — please email hello@kaylee-jane.com';
+        btn.style.background = '#8b0000';
+        btn.style.color = '#fff';
+        btn.disabled = false;
+    });
   }
 
   // ── Scroll reveal ──
