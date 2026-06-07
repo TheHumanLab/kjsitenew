@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaylee-Jane Diagnostic Discipline™</title>
+  <meta name="description" content="The Kaylee-Jane Diagnostic Discipline™ identifies the structural conditions producing your organisation's persistent outcomes. Structural diagnosis for CEOs, founders, boards, and investors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:       #0a0a0a;
+      --off-black:   #111111;
+      --dark:        #1a1a1a;
+      --mid:         #2c2c2c;
+      --border:      #2e2e2e;
+      --muted:       #6b6b6b;
+      --light-muted: #9a9a9a;
+      --off-white:   #f5f3ef;
+      --white:       #ffffff;
+      --cream:       #faf8f4;
+      --gold:        #c9a96e;
+      --gold-light:  #d4b882;
+      --gold-dark:   #a8854a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--off-black);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+    h4 { font-size: 1.15rem; font-weight: 500; }
+
+    p { color: #3a3a3a; }
+
+    .serif { font-family: 'Cormorant Garamond', serif; }
+    .gold  { color: var(--gold); }
+    .muted { color: var(--muted); font-size: 0.875rem; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .container--narrow {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 6rem 0; }
+    section.tight { padding: 4rem 0; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--light-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--black) !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      letter-spacing: 0.06em !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(201,169,110,0.5);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--off-black);
+      border: 1px solid var(--border);
+    }
+    .btn-outline-dark:hover {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+    .divider--center { margin: 1.5rem auto; }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    #hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201,169,110,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,169,110,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .hero-headline {
+      color: var(--white);
+      max-width: 820px;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      color: var(--light-muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .hero-proposition {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .hero-prop-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .hero-prop-item p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════════
+       RECOGNITION
+    ══════════════════════════════════════════ */
+    #recognition {
+      background: var(--cream);
+    }
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .recognition-left h2 {
+      margin-bottom: 1rem;
+    }
+    .recognition-left p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    /* ══════════════════════════════════════════
+       PROPOSITION STATEMENT
+    ══════════════════════════════════════════ */
+    #proposition {
+      background: var(--off-black);
+      padding: 7rem 0;
+      text-align: center;
+    }
+    .proposition-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.3;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+    .proposition-statement strong {
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .proposition-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    /* ══════════════════════════════════════════
+       MECHANISM
+    ══════════════════════════════════════════ */
+    #mechanism {
+      background: var(--cream);
+    }
+    .mechanism-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 4rem;
+    }
+    .mechanism-intro h2 { margin-bottom: 1rem; }
+    .mechanism-intro p { color: var(--muted); }
+    .mechanism-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .mechanism-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), var(--gold), transparent);
+      opacity: 0.3;
+    }
+    .mechanism-step {
+      padding: 0 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      background: var(--cream);
+      position: relative;
+      z-index: 1;
+    }
+    .mechanism-step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--off-black);
+    }
+    .mechanism-step p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════════
+       DOMAINS
+    ══════════════════════════════════════════ */
+    #domains {
+      background: var(--dark);
+      padding: 6rem 0;
+    }
+    .domains-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 4rem;
+    }
+    .domains-intro h2 { color: var(--white); margin-bottom: 1rem; }
+    .domains-intro p { color: var(--muted); }
+    .domains-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .domain-card {
+      background: var(--off-black);
+      padding: 2rem;
+      transition: background 0.2s;
+    }
+    .domain-card:hover { background: var(--mid); }
+    .domain-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    .domain-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .domain-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .domain-question {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* ══════════════════════════════════════════
+       CONDITIONS
+    ══════════════════════════════════════════ */
+    #conditions {
+      background: var(--cream);
+    }
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .conditions-left h2 { margin-bottom: 1rem; }
+    .conditions-left p { margin-bottom: 1rem; color: var(--muted); font-size: 0.95rem; }
+    .conditions-list {
+      list-style: none;
+    }
+    .conditions-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e8e4de;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .conditions-list li:last-child { border-bottom: none; }
+    .condition-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--off-black);
+      min-width: 200px;
+    }
+    .condition-def {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .condition-category {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      background: rgba(201,169,110,0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* ══════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════ */
+    #services {
+      background: var(--off-black);
+      padding: 7rem 0;
+    }
+    .services-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 4rem;
+    }
+    .services-intro h2 { color: var(--white); margin-bottom: 1rem; }
+    .services-intro p { color: var(--muted); }
+    .services-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .service-row {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr 1fr;
+      gap: 0;
+      transition: background 0.2s;
+    }
+    .service-row:hover { background: var(--mid); }
+    .service-row.flagship {
+      background: #1e1a14;
+      border-left: 2px solid var(--gold);
+    }
+    .service-row.flagship:hover { background: #231f17; }
+    .service-cell {
+      padding: 1.75rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .service-cell:last-child { border-right: none; }
+    .service-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .service-row.flagship .service-name { color: var(--gold-light); }
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .service-ideal {
+      font-size: 0.82rem;
+      color: var(--light-muted);
+      line-height: 1.6;
+    }
+    .service-duration {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+    .service-price-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .services-cta {
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       DECISION GUIDE
+    ══════════════════════════════════════════ */
+    #decision {
+      background: var(--cream);
+    }
+    .decision-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
+    .decision-intro h2 { margin-bottom: 1rem; }
+    .decision-intro p { color: var(--muted); }
+    .decision-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .decision-card {
+      background: var(--white);
+      border: 1px solid #e8e4de;
+      padding: 2rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .decision-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .decision-if {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .decision-scenario {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--off-black);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .decision-arrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .decision-service {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+    }
+    .decision-link {
+      font-size: 0.78rem;
+      color: var(--gold-dark);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid rgba(168,133,74,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .decision-link:hover { border-color: var(--gold-dark); }
+    .decision-unsure {
+      background: var(--off-black);
+      padding: 2.5rem;
+      text-align: center;
+      border-radius: 2px;
+    }
+    .decision-unsure p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .decision-unsure strong {
+      color: var(--white);
+      font-weight: 400;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ══════════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════════ */
+    #about {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-left {
+      position: sticky;
+      top: 100px;
+    }
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--off-black);
+      margin-bottom: 0.25rem;
+    }
+    .about-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .about-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--off-black);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-portrait-placeholder {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: var(--border);
+      font-weight: 300;
+    }
+    .about-right h2 { margin-bottom: 1rem; }
+    .about-right p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #3a3a3a;
+    }
+    .about-doctrine {
+      margin-top: 2.5rem;
+      padding: 2rem;
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+    }
+    .about-doctrine h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .doctrine-layers {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .doctrine-layers li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .doctrine-layers li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .doctrine-layers li strong {
+      color: var(--off-black);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════════
+       CLOSING CTA
+    ══════════════════════════════════════════ */
+    #cta {
+      background: var(--black);
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,169,110,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .cta-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white);
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      line-height: 1.25;
+    }
+    .cta-sub {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .cta-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ══════════════════════════════════════════
+       CONTACT MODAL
+    ══════════════════════════════════════════ */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: var(--white);
+      max-width: 560px;
+      width: 100%;
+      padding: 3rem;
+      border-radius: 2px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted);
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--off-black); }
+    .modal h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .modal-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--off-black);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); }
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--off-black);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .footer-col h5 {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: var(--light-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.5rem 2rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-proposition { grid-template-columns: 1fr; gap: 1.5rem; }
+      .recognition-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mechanism-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .mechanism-steps::before { display: none; }
+      .domains-grid { grid-template-columns: repeat(2, 1fr); }
+      .conditions-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .service-row { grid-template-columns: 1fr 1fr; }
+      .service-cell:nth-child(3),
+      .service-cell:nth-child(4) { border-top: 1px solid var(--border); }
+      .decision-cards { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-left { position: static; }
+      .about-portrait { aspect-ratio: 4/3; max-width: 320px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 4rem 0; }
+      .nav-links { display: none; }
+      .mechanism-steps { grid-template-columns: 1fr; }
+      .domains-grid { grid-template-columns: 1fr; }
+      .service-row { grid-template-columns: 1fr; }
+      .service-cell { border-right: none !important; border-top: 1px solid var(--border); }
+      .service-cell:first-child { border-top: none; }
+      .decision-cards { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Kaylee-Jane <span>Diagnostic Discipline™</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#domains">The Discipline</a></li>
+      <li><a href="#decision">Where to Start</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#" class="nav-cta" onclick="openModal(event)">Start a Conversation</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Kaylee-Jane Diagnostic Discipline™</p>
+    <h1 class="hero-headline">
+      Most organisational problems are not solved<br>
+      because they are not <em>diagnosed.</em>
+    </h1>
+    <p class="hero-sub">
+      The Kaylee-Jane Diagnostic Discipline™ identifies the structural conditions producing your organisation's outcomes — and redesigns the architecture generating them.
+    </p>
+    <div class="btn-group">
+      <a href="#" class="btn btn-primary" onclick="openModal(event)">Start a Conversation</a>
+      <a href="#decision" class="btn btn-outline">Find the Right Service</a>
+    </div>
+
+    <div class="hero-proposition">
+      <div class="hero-prop-item">
+        <h4>Every outcome has an architecture.</h4>
+        <p>Persistent problems are not failures of effort. They are structural — produced by the underlying architecture of how authority, decisions, accountability, and execution are organised.</p>
+      </div>
+      <div class="hero-prop-item">
+        <h4>Diagnosis before intervention.</h4>
+        <p>Addressing what is visible while the architecture producing it remains unchanged is why most interventions do not hold. Diagnosis identifies the source. Redesign changes it.</p>
+      </div>
+      <div class="hero-prop-item">
+        <h4>Named conditions. Evidenced findings.</h4>
+        <p>Every structural condition is named, evidenced, and classified by severity. Every redesign priority is targeted at the diagnosed condition. Every engagement ends with verified structural change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     RECOGNITION
+══════════════════════════════════════════ -->
+<section id="recognition">
+  <div class="container">
+    <div class="recognition-grid reveal">
+      <div class="recognition-left">
+        <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Pattern</p>
+        <h2>You have addressed this before.<br>It came back.</h2>
+        <div class="divider"></div>
+        <p>The leadership has changed. The structure has been reorganised. The strategy has been refreshed. The consultants have presented their recommendations.</p>
+        <p>And the same problems are still present.</p>
+        <p>Not because the interventions were poorly designed. Because they addressed what was visible — the outcomes — while the architecture producing those outcomes remained unchanged.</p>
+        <p>Persistent organisational problems are not failures of effort or intelligence. They are structural. They emerge from the underlying architecture of how authority is held, how decisions are made, how accountability functions, how information moves, and how execution is organised.</p>
+        <p style="font-weight:500;color:var(--off-black);">When the architecture does not change, the outcomes do not change.</p>
+        <div style="margin-top:2rem;">
+          <a href="#mechanism" class="btn btn-outline-dark">Understand the mechanism →</a>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--off-black);padding:3rem;border-radius:2px;">
+          <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">The Diagnostic Emergence Error</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);line-height:1.5;font-weight:300;margin-bottom:1.5rem;">"The tendency to mistake emergent outcomes for root causes."</p>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;">When outcomes are treated as causes, intervention becomes misdirected. The practitioner addresses the outcome — the visible surface — while the architecture continues to operate beneath it, producing the same conditions, shaping the same behaviours, generating the same patterns, and reproducing the same outcomes.</p>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.8;">This is why recurring failures in organisational performance, governance, and change result not from a lack of effort or capability, but from intervention directed at the wrong level of the system.</p>
+          <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);">
+            <p style="font-size:0.8rem;color:var(--light-muted);font-style:italic;font-family:'Cormorant Garamond',serif;">From the Theory of Diagnostic Emergence™</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PROPOSITION
+══════════════════════════════════════════ -->
+<section id="proposition">
+  <div class="container--narrow" style="text-align:center;">
+    <p class="proposition-statement reveal">
+      Every outcome has <strong>an architecture.</strong><br>
+      To change the outcome,<br>diagnose the architecture.
+    </p>
+    <p class="proposition-sub reveal">To change the outcome, you must first understand the architecture producing it. That requires diagnosis — not assumption, not reorganisation, not another intervention directed at what is visible.</p>
+    <div class="btn-group reveal" style="justify-content:center;">
+      <a href="#" class="btn btn-primary" onclick="openModal(event)">Begin a Diagnostic Engagement</a>
+      <a href="#services" class="btn btn-outline">View the Services</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     MECHANISM
+══════════════════════════════════════════ -->
+<section id="mechanism">
+  <div class="container">
+    <div class="mechanism-intro reveal">
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">How It Works</p>
+      <h2>How architectures produce outcomes</h2>
+      <div class="divider divider--center"></div>
+      <p style="color:var(--muted);">The Theory of Diagnostic Emergence™ explains the mechanism through which organisational architectures produce the outcomes organisations experience.</p>
+    </div>
+    <div class="mechanism-steps reveal">
+      <div class="mechanism-step">
+        <div class="step-number">01</div>
+        <h4>Architecture Creates Conditions</h4>
+        <p>Every organisational architecture creates operating conditions — the structural environment within which people work. Who holds authority. How information moves. Who owns what. These conditions are always present and always produce consequences.</p>
+      </div>
+      <div class="mechanism-step">
+        <div class="step-number">02</div>
+        <h4>Conditions Shape Behaviour</h4>
+        <p>Operating conditions shape how people behave — not because of individual character, but because the conditions make certain behaviours rational or unavoidable. Unclear accountability produces avoidance of ownership. Not irresponsibility — structure.</p>
+      </div>
+      <div class="mechanism-step">
+        <div class="step-number">03</div>
+        <h4>Behaviour Produces Patterns</h4>
+        <p>When conditions consistently shape behaviour in a particular direction, patterns emerge. These patterns are not random. They are structural — produced by the same conditions, in the same domains, over time.</p>
+      </div>
+      <div class="mechanism-step">
+        <div class="step-number">04</div>
+        <h4>Patterns Produce Outcomes</h4>
+        <p>Patterns, sustained over time, produce the outcomes organisations experience and report. They are persistent because the architecture producing them has not changed. Change the architecture — and the outcomes change.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem;" class="reveal">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem;">Architecture → Conditions → Behaviour → Patterns → Outcomes</p>
+      <a href="#services" class="btn btn-outline-dark">See how diagnosis works →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DOMAINS
+══════════════════════════════════════════ -->
+<section id="domains">
+  <div class="container">
+    <div class="domains-intro reveal">
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Structural Architecture Framework™</p>
+      <h2 style="color:var(--white);">Six domains of organisational architecture</h2>
+      <div class="divider divider--center"></div>
+      <p>Every diagnostic engagement investigates all six domains. Failures rarely originate within a single domain — they emerge through interactions between them.</p>
+    </div>
+    <div class="domains-grid reveal">
+      <div class="domain-card">
+        <p class="domain-number">01</p>
+        <h4>Governance</h4>
+        <p>How the organisation is directed, authorised, and controlled. How authority is exercised, how oversight functions, and how accountability is maintained.</p>
+        <p class="domain-question">Who has the right to decide?</p>
+      </div>
+      <div class="domain-card">
+        <p class="domain-number">02</p>
+        <h4>Accountability</h4>
+        <p>How ownership of outcomes is established and maintained. Whether responsibilities are understood, accepted, measured, and enforced.</p>
+        <p class="domain-question">Who owns the outcome?</p>
+      </div>
+      <div class="domain-card">
+        <p class="domain-number">03</p>
+        <h4>Decision Architecture</h4>
+        <p>How decisions are made and by whom. Whether authority aligns with operational reality and whether decisions are made at the right level.</p>
+        <p class="domain-question">How does the organisation decide?</p>
+      </div>
+      <div class="domain-card">
+        <p class="domain-number">04</p>
+        <h4>Communication Architecture</h4>
+        <p>How information is transmitted, interpreted, escalated, and acted upon. Where information moves well and where it stalls, distorts, or disappears.</p>
+        <p class="domain-question">How does the organisation know?</p>
+      </div>
+      <div class="domain-card">
+        <p class="domain-number">05</p>
+        <h4>Dependency Architecture</h4>
+        <p>Where concentrations of knowledge, authority, capability, or operational reliance create structural fragility. Where the organisation is most vulnerable.</p>
+        <p class="domain-question">What happens if this disappears?</p>
+      </div>
+      <div class="domain-card">
+        <p class="domain-number">06</p>
+        <h4>Execution Architecture</h4>
+        <p>How plans, decisions, responsibilities, and resources are converted into operational reality. Where the gap between decision and delivery exists.</p>
+        <p class="domain-question">How does the organisation produce results?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONDITIONS
+══════════════════════════════════════════ -->
+<section id="conditions">
+  <div class="container">
+    <div class="conditions-grid reveal">
+      <div class="conditions-left">
+        <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Structural Conditions Library™</p>
+        <h2>Most organisational dysfunction has a name.</h2>
+        <div class="divider"></div>
+        <p>The Structural Conditions Library™ classifies the architectural states that produce organisational outcomes — giving practitioners and clients a shared, precise language for what diagnosis reveals.</p>
+        <p>These are not descriptions of poor performance. They are structural conditions — specific configurations of organisational architecture that generate predictable consequences.</p>
+        <p>Every condition is named, defined, and carries a precise redesign response. When a condition is diagnosed, it is named using the Library's vocabulary — giving the organisation clarity on what has been found and what must change.</p>
+        <div style="margin-top:2rem;">
+          <a href="#" class="btn btn-outline-dark" onclick="openModal(event)">Discuss your situation →</a>
+        </div>
+      </div>
+      <div>
+        <div style="margin-bottom:1rem;">
+          <span class="condition-category">Authority Conditions</span>
+        </div>
+        <ul class="conditions-list">
+          <li>
+            <div>
+              <p class="condition-name">Authority Drift</p>
+              <p class="condition-def">Decision-making has migrated away from its designated structural position and is now operating from an unintended location.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="condition-name">Governance Failure</p>
+              <p class="condition-def">Oversight mechanisms are absent, bypassed, or non-functional. The organisation is operating without effective structural control.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="condition-name">Accountability Ambiguity</p>
+              <p class="condition-def">Ownership of outcomes is unclear, contested, or unassigned. No individual or role holds genuine responsibility for a defined result.</p>
+            </div>
+          </li>
+        </ul>
+        <div style="margin-top:1.5rem;margin-bottom:1rem;">
+          <span class="condition-category">Structural Flow Conditions</span>
+        </div>
+        <ul class="conditions-list">
+          <li>
+            <div>
+              <p class="condition-name">Decision Congestion</p>
+              <p class="condition-def">Too many decisions concentrated in too few people or approval layers, creating a structural bottleneck that limits organisational velocity.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="condition-name">Execution Disconnect</p>
+              <p class="condition-def">Decisions are being made but are not being converted into operational action. The decision architecture and execution architecture are operating independently.</p>
+            </div>
+          </li>
+        </ul>
+        <div style="margin-top:1.5rem;margin-bottom:1rem;">
+          <span class="condition-category">Dependency Conditions</span>
+        </div>
+        <ul class="conditions-list">
+          <li>
+            <div>
+              <p class="condition-name">Founder Dependency</p>
+              <p class="condition-def">Organisational functioning is contingent on the founder's direct involvement in decisions, relationships, or operations the architecture should manage independently.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="condition-name">Dependency Concentration</p>
+              <p class="condition-def">Critical functions rely on a single person, role, or relationship — creating structural fragility at the point of concentration.</p>
+            </div>
+          </li>
+        </ul>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:1.5rem;font-style:italic;">The full Structural Conditions Library™ classifies 17 conditions across three categories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="services-intro reveal">
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Services</p>
+      <h2 style="color:var(--white);">Five services. One discipline.</h2>
+      <div class="divider divider--center"></div>
+      <p>A complete pathway from initial structural assessment to verified architectural change and ongoing structural intelligence.</p>
+    </div>
+
+    <div class="services-stack reveal">
+
+      <!-- Row 1 -->
+      <div class="service-row">
+        <div class="service-cell">
+          <p class="service-tag">Entry Diagnostic</p>
+          <p class="service-name">Structural Reality Review™</p>
+          <p class="service-desc">A focused structural diagnostic that identifies the architectural condition producing a specific organisational challenge.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Ideal For</p>
+          <p class="service-ideal">A specific concern requiring an initial independent assessment before a larger commitment.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Duration</p>
+          <p class="service-duration">3–7 days</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Investment From</p>
+          <p class="service-price">£5,000</p>
+          <p class="service-price-sub">$6,500 USD</p>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="service-row">
+        <div class="service-cell">
+          <p class="service-tag">Governance Diagnostic</p>
+          <p class="service-name">Structural Governance Review™</p>
+          <p class="service-desc">An independent assessment of governance architecture for boards, investors, and governance authorities.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Ideal For</p>
+          <p class="service-ideal">Boards, investors, and governance committees requiring an independent governance view.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Duration</p>
+          <p class="service-duration">1–2 weeks</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Investment From</p>
+          <p class="service-price">£10,000</p>
+          <p class="service-price-sub">$12,500 USD</p>
+        </div>
+      </div>
+
+      <!-- Row 3 — FLAGSHIP -->
+      <div class="service-row flagship">
+        <div class="service-cell">
+          <p class="service-tag">Core Diagnostic — Flagship</p>
+          <p class="service-name">Organizational Autopsy™</p>
+          <p class="service-desc">The complete structural diagnostic. Named conditions. Evidenced findings. A precise pathway from persistent outcome to verified architectural change.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Ideal For</p>
+          <p class="service-ideal">Organisations with persistent outcomes that have not responded to previous intervention.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Duration</p>
+          <p class="service-duration">2–6 weeks</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Investment From</p>
+          <p class="service-price">£18,000</p>
+          <p class="service-price-sub">$22,500 USD</p>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="service-row">
+        <div class="service-cell">
+          <p class="service-tag">Transformation Service</p>
+          <p class="service-name">Structural Redesign Engagement™</p>
+          <p class="service-desc">Structured implementation of the redesign priorities identified through the Organizational Autopsy™ — targeted, verified, and accountable.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Ideal For</p>
+          <p class="service-ideal">Organisations ready to implement structural change following a completed diagnosis.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Duration</p>
+          <p class="service-duration">4–16 weeks</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Investment</p>
+          <p class="service-price" style="font-size:0.95rem;">Scoped from findings</p>
+          <p class="service-price-sub">Confirmed at OA™ presentation</p>
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="service-row">
+        <div class="service-cell">
+          <p class="service-tag">Retainer Service</p>
+          <p class="service-name">Structural Intelligence Partnership™</p>
+          <p class="service-desc">Ongoing structural monitoring and advisory for organisations that want structural intelligence as a continuous input.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Ideal For</p>
+          <p class="service-ideal">Organisations wanting early identification of emerging conditions and sustained structural health.</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Duration</p>
+          <p class="service-duration">12 months minimum</p>
+        </div>
+        <div class="service-cell">
+          <p class="service-tag">Investment From</p>
+          <p class="service-price">£2,500<span style="font-size:0.8rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:400;">/mo</span></p>
+          <p class="service-price-sub">$3,200 USD per month</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="services-cta reveal">
+      <a href="#" class="btn btn-primary" onclick="openModal(event)">Discuss the Right Service for Your Situation</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DECISION GUIDE
+══════════════════════════════════════════ -->
+<section id="decision">
+  <div class="container">
+    <div class="decision-intro reveal">
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Where to Start</p>
+      <h2>Which service is right for your situation?</h2>
+      <div class="divider divider--center"></div>
+      <p>The right starting point depends on the nature of the presenting situation, the organisation's readiness, and the authority of the commissioning party.</p>
+    </div>
+
+    <div class="decision-cards reveal">
+      <div class="decision-card">
+        <p class="decision-if">If you have</p>
+        <p class="decision-scenario">A specific structural concern and want an independent assessment before committing to a larger engagement.</p>
+        <p class="decision-arrow">→ Start with</p>
+        <p class="decision-service">Structural Reality Review™</p>
+        <a href="#" class="decision-link" onclick="openModal(event)">Enquire →</a>
+      </div>
+      <div class="decision-card">
+        <p class="decision-if">If you have</p>
+        <p class="decision-scenario">A board, investor, or governance committee that needs an independent view of whether governance is functioning as it should.</p>
+        <p class="decision-arrow">→ Start with</p>
+        <p class="decision-service">Structural Governance Review™</p>
+        <a href="#" class="decision-link" onclick="openModal(event)">Enquire →</a>
+      </div>
+      <div class="decision-card">
+        <p class="decision-if">If you have</p>
+        <p class="decision-scenario">Persistent problems that have not responded to previous intervention and you need to understand what is structurally producing them.</p>
+        <p class="decision-arrow">→ Start with</p>
+        <p class="decision-service">Organizational Autopsy™</p>
+        <a href="#" class="decision-link" onclick="openModal(event)">Enquire →</a>
+      </div>
+      <div class="decision-card">
+        <p class="decision-if">If you have</p>
+        <p class="decision-scenario">A completed diagnosis with confirmed redesign priorities and need structured support to implement and verify the change.</p>
+        <p class="decision-arrow">→ Start with</p>
+        <p class="decision-service">Structural Redesign Engagement™</p>
+        <a href="#" class="decision-link" onclick="openModal(event)">Enquire →</a>
+      </div>
+      <div class="decision-card">
+        <p class="decision-if">If you have</p>
+        <p class="decision-scenario">Addressed your structural conditions and want ongoing intelligence to ensure they do not return as the organisation grows.</p>
+        <p class="decision-arrow">→ Start with</p>
+        <p class="decision-service">Structural Intelligence Partnership™</p>
+        <a href="#" class="decision-link" onclick="openModal(event)">Enquire →</a>
+      </div>
+      <div class="decision-card" style="background:var(--off-black);border-color:var(--border);">
+        <p class="decision-if" style="color:var(--muted);">If you are</p>
+        <p class="decision-scenario" style="color:var(--light-muted);">Not certain which service applies to your situation.</p>
+        <p class="decision-arrow" style="color:var(--muted);">→ Start with</p>
+        <p class="decision-service" style="color:var(--gold);">A Conversation</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1rem;line-height:1.6;">A brief initial conversation — typically 30 minutes — will identify the appropriate entry point.</p>
+        <a href="#" class="decision-link" style="color:var(--gold);border-color:rgba(201,169,110,0.3);" onclick="openModal(event)">Start here →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-left">
+        <div class="about-portrait">
+          <span class="about-portrait-placeholder">KJ</span>
+        </div>
+        <p class="about-name">Kaylee-Jane</p>
+        <p class="about-title">Founder · Structural Diagnostician</p>
+        <a href="#" class="btn btn-outline-dark" onclick="openModal(event)" style="font-size:0.75rem;padding:0.7rem 1.5rem;">Work With Me →</a>
+      </div>
+      <div class="about-right">
+        <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">About</p>
+        <h2>Why I built this discipline</h2>
+        <div class="divider"></div>
+        <p>Most organisational problems are addressed before they are understood.</p>
+        <p>I have seen this pattern consistently — in organisations of different sizes, different sectors, different stages of development. A problem emerges. Leadership responds. The response addresses what is visible. The problem returns.</p>
+        <p>Not because the people involved lack capability or commitment. Because the intervention was directed at the outcome — the visible surface of the problem — while the architecture producing it remained unchanged.</p>
+        <p>This is what I call the Diagnostic Emergence Error: the tendency to mistake emergent outcomes for root causes. It is not a failure of intelligence. It is a structural tendency. Outcomes are visible. The architectures producing them are not.</p>
+        <p>I built the Kaylee-Jane Diagnostic Discipline™ to address this directly. The discipline provides a structured approach to identifying the architectural conditions producing organisational outcomes — and to redesigning those conditions with precision.</p>
+        <p>It is not a general consulting methodology. It is a diagnostic discipline, built on a specific intellectual architecture that has been developed, tested, and refined into a complete operational system.</p>
+
+        <div class="about-doctrine">
+          <h4>The Intellectual Architecture</h4>
+          <ul class="doctrine-layers">
+            <li><strong>Kaylee-Jane Doctrine™</strong> — The foundational worldview: every outcome has an architecture.</li>
+            <li><strong>Theory of Diagnostic Emergence™</strong> — The explanatory mechanism: how architectures produce outcomes.</li>
+            <li><strong>Structural Architecture Framework™</strong> — The six organisational domains through which architecture is examined.</li>
+            <li><strong>Structural Diagnostic Model™</strong> — The seven-stage reasoning pathway from outcome to verified change.</li>
+            <li><strong>6S Structural Methodology™</strong> — The operational process for diagnosis and redesign.</li>
+            <li><strong>Structural Conditions Library™</strong> — 17 classified conditions with precise definitions and redesign responses.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CLOSING CTA
+══════════════════════════════════════════ -->
+<section id="cta">
+  <div class="container--narrow">
+    <p class="cta-eyebrow reveal">Begin</p>
+    <h2 class="cta-headline reveal">The architecture is producing the outcome.<br>The question is whether you know which one.</h2>
+    <p class="cta-sub reveal">A brief initial conversation will identify whether a diagnostic engagement is appropriate for your situation and which service is the right starting point. There is no obligation following the conversation.</p>
+    <div class="btn-group reveal" style="justify-content:center;">
+      <a href="#" class="btn btn-primary" onclick="openModal(event)">Start a Conversation</a>
+      <a href="#decision" class="btn btn-outline">Use the Decision Guide</a>
+    </div>
+    <p class="cta-note reveal">Enquiries are responded to within two business days.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Kaylee-Jane <span>Diagnostic Discipline™</span></p>
+      <p class="footer-tagline">Every outcome has an architecture.</p>
+      <p class="footer-copy">Structural diagnostic services for CEOs, founders, boards, and investors. Identifying and redesigning the architectural conditions producing organisational outcomes.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Structural Reality Review™</a></li>
+        <li><a href="#services">Structural Governance Review™</a></li>
+        <li><a href="#services">Organizational Autopsy™</a></li>
+        <li><a href="#services">Structural Redesign Engagement™</a></li>
+        <li><a href="#services">Structural Intelligence Partnership™</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#mechanism">The Discipline</a></li>
+        <li><a href="#domains">Six Domains</a></li>
+        <li><a href="#conditions">Structural Conditions</a></li>
+        <li><a href="#decision">Where to Start</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#" onclick="openModal(event)">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Kaylee-Jane Diagnostic Discipline™. All intellectual property — including the Kaylee-Jane Doctrine™, Theory of Diagnostic Emergence™, Structural Architecture Framework™, Structural Diagnostic Model™, 6S Structural Methodology™, Structural Conditions Library™, and all associated service names and marks — is proprietary intellectual property. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT MODAL
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="contactModal" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3>Start a Conversation</h3>
+    <p class="modal-sub">A brief initial conversation — typically 30 minutes — will identify whether a diagnostic engagement is appropriate for your situation and which service is the right starting point.</p>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last name" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="organisation">Organisation</label>
+          <input type="text" id="organisation" placeholder="Organisation name" />
+        </div>
+        <div class="form-group">
+          <label for="role">Your Role</label>
+          <input type="text" id="role" placeholder="CEO, Founder, Board Member…" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="service">Service of Interest</label>
+        <select id="service">
+          <option value="">Not sure — help me decide</option>
+          <option value="srr">Structural Reality Review™</option>
+          <option value="sgr">Structural Governance Review™</option>
+          <option value="oa">Organizational Autopsy™</option>
+          <option value="sre">Structural Redesign Engagement™</option>
+          <option value="sip">Structural Intelligence Partnership™</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="situation">Briefly describe your presenting situation</label>
+        <textarea id="situation" placeholder="What outcomes is your organisation experiencing? How long have they been present? What has been tried?"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Request a Conversation →</button>
+      <p class="form-note">Enquiries are responded to within two business days. There is no obligation following the initial conversation.</p>
+    </form>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+  // ── Modal ──
+  function openModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById('contactModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('contactModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('contactModal')) closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Enquiry Received — We\'ll be in touch within two business days.';
+    btn.style.background = '#2c5f2e';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Smooth nav highlight ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      if (a.getAttribute('href') === '#' + current) a.style.color = '#fff';
+    });
+  });
+</script>
+
+</body>
+</html>
